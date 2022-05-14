@@ -61,4 +61,4 @@ We can successfully model whether pitches are swung and missed at. Random Forest
 
 ## Future Work
 
-The models can be further optimizted and more features can be included. In addition more model types can be tried to see if they can be more accurate then random forests. Whiffs are not the only measure of success. Future models could included soft contact as being a success. In addition pitches that are not swung on can be important as well. Another step to take is creating streamlit apps for all pitch types. 
+The models can be further optimizted and more features can be included. In addition more model types can be tried to see if they can be more accurate then random forests. Whiffs are not the only measure of success. Future models could included soft contact as being a success. In addition pitches that are not swung on can be important as well. 
