@@ -4,7 +4,7 @@ import pandas as pd
 
 model = pickle.load(open('model8.sav','rb'))
 
-st.title("Predicting Whiffs for 4-seam fastballs")
+st.title("Predicting Whiffs for split fingered fastballs")
 st.markdown("Predicting Whiffs")
 
 with open('./list.pkl', 'rb') as pickle_in:
@@ -18,11 +18,11 @@ with st.form('prediction_form'):
 
 
 
-    speed = st.text_input('effective_speed', max_chars = 15) 
-    spin = st.text_input('release_spin_rate', max_chars = 15) 
+    speed = st.text_input('speed', max_chars = 15) 
+    spin = st.text_input('spinrate', max_chars = 15) 
     location = st.text_input('zone', max_chars =15)
-    horizontal_break = st.text_input('pfx_x', max_chars = 15)
-    vertical_break = st.text_input('pfx_z', max_chars = 15)
+    horizontal_break = st.text_input('horizontal movement', max_chars = 15)
+    vertical_break = st.text_input('vertical movement', max_chars = 15)
     
     submitted = st.form_submit_button("Submit")
     if submitted:
@@ -33,7 +33,7 @@ with st.form('prediction_form'):
         form_list[0].append(float(vertical_break))
         
 
-        df = pd.DataFrame(form_list, columns = ['effective_speed','release_spin_rate', 'zone', 'pfx_x', 'pfx_z'])
+        df = pd.DataFrame(form_list, columns = ['release_speed','release_spin_rate', 'zone', 'pfx_x', 'pfx_z'])
         df = df.reindex(columns=columns).fillna(0)
 
 
